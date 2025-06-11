@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, #ff6b6b, #ffc0cb);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.birthday-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #ff4757;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+.heart-container {
+    font-size: 2rem;
+    color: #ff4757;
+    animation: pulse 1.5s infinite;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.heart-container:hover {
+    transform: scale(1.2);
+}
+
+.message-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.message {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #2f3542;
+    margin-bottom: 15px;
+}
+
+.gallery {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.photo-frame {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+    border: 3px solid #ff4757;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #f1f2f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #747d8c;
+}
+
+.photo-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.wishes-container {
+    display: none;
+}
+
+.wish-btn {
+    display: none;
+}
+
+.special-wish {
+    display: none;
+}
+
+.floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.balloons-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatBalloon 4s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+.balloon-1 {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.balloon-2 {
+    left: 30%;
+    animation-delay: 0.5s;
+}
+
+.balloon-3 {
+    left: 60%;
+    animation-delay: 1s;
+}
+
+.balloon-4 {
+    left: 80%;
+    animation-delay: 1.5s;
+}
+
+.cake-container {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.cake {
+    font-size: 8rem;
+    animation: cakeFloat 3s ease-in-out infinite;
+    display: inline-block;
+    filter: drop-shadow(0 0 10px rgba(255, 71, 87, 0.3));
+}
+
+@keyframes cakeFloat {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.05);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes floatBalloon {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 0 rgba(255, 71, 87, 0);
+    }
+    50% {
+        transform: scale(1.2);
+        text-shadow: 0 0 20px rgba(255, 71, 87, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        text-shadow: 0 0 0 rgba(255, 71, 87, 0);
+    }
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+    50% {
+        transform: translateY(-50vh) rotate(180deg) scale(1.2);
+    }
+    to {
+        transform: translateY(-100vh) rotate(360deg) scale(1);
+    }
+}
+
+@keyframes candleFlicker {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    25% {
+        transform: scale(1.1) rotate(-5deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    75% {
+        transform: scale(1.1) rotate(5deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .birthday-card {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .message {
+        font-size: 1rem;
+    }
+} 
